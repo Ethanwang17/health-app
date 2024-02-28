@@ -12,10 +12,21 @@ import HomeScreen from './Screens/HomeScreen';
 import VerifyEmailScreen from "./Screens/VerifyEmailScreen";
 import PasswordChanged from "./Screens/PasswordChangedScreen";
 import NewPwScreen from "./Screens/NewPwScreen";
-import BtDeviceScreen from "./Screens/BtDeviceScreen";
+import { useFonts, Inter_800ExtraBold, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
+import { Rubik_700Bold } from "@expo-google-fonts/rubik";
+
+
+// import BtDeviceScreen from "./Screens/BtDeviceScreen";
 
 const Stack = createNativeStackNavigator();
 export default function App(){
+  let [fontsLoaded] = useFonts({
+    Inter_800ExtraBold,Rubik_700Bold,Inter_600SemiBold, Inter_700Bold
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
     return (
      <NavigationContainer>
       <Stack.Navigator 
@@ -25,8 +36,8 @@ export default function App(){
         headerTitleStyle: {fontWeight: "bold", 
         fontSize: 25}}}>
           <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{headerShown: false}}></Stack.Screen>
-          <Stack.Screen name="LoginScreen" component={LoginScreen} options={{title: "Welcome Back" }}></Stack.Screen>
-          <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{title: "Create an Account"}}></Stack.Screen>
+          <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false }}></Stack.Screen>
+          <Stack.Screen name='RegisterScreen' component={RegisterScreen} options={{headerShown: false}}></Stack.Screen>
           <Stack.Screen name='PwResetScreen' component={PwResetScreen} options={{title: "Enter your e-mail"}}></Stack.Screen>
           <Stack.Screen name='NewPwScreen' component={NewPwScreen} options={{title: "Enter a new password"}}></Stack.Screen>
           <Stack.Screen name='HomeScreen' component={HomeScreen} options={{title: "Home"}}></Stack.Screen>
