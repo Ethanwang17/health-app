@@ -1,9 +1,10 @@
 import React from "react";
 import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
-import {Button, Card, TextInput, Text} from "react-native-paper";
+import {Button, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
-import {transparent} from "react-native-paper/lib/typescript/styles/themes/v2/colors";
+import CustomButton from "../Components/CustomButton";
+import TextFields from "../Components/TextFields";
 
 interface LoginScreenProps {
 	navigation: any;
@@ -12,10 +13,15 @@ interface LoginScreenProps {
 const LoginScreen = (props: LoginScreenProps) => {
 	const resetPw = () => props.navigation.navigate("PwResetScreen");
 	const login = () => props.navigation.navigate("BtDeviceScreen");
-	const register = () => props.navigation.navigate("RegisterScreen");
+	const register = () => props.navigation.navigate("SignUpScreen");
 
 	const {passwordVisibility, handlePasswordVisibility} =
 		useTogglePasswordVisibility();
+
+	const handleSignInPress = () => {
+		// Handle button press logic here
+		props.navigation.navigate("OnboardFirstScreen");
+	};
 
 	return (
 		<SafeAreaView style={applicationTheme.loginContent}>
@@ -33,7 +39,11 @@ const LoginScreen = (props: LoginScreenProps) => {
 				>
 					Welcome!
 				</Text>
-				<Text
+				<TextFields keyboardType="email-address" textName="E-mail" />
+				<TextFields textName="Password" marginBottom={56} />
+
+				<CustomButton onPress={handleSignInPress} text="Sign In" />
+				{/* <Text
 					style={[
 						applicationTheme.titleTextStyle,
 						{
@@ -44,13 +54,7 @@ const LoginScreen = (props: LoginScreenProps) => {
 				>
 					E-mail
 				</Text>
-				<TextInput
-					style={applicationTheme.input}
-					keyboardType="email-address"
-					underlineColor="transparent"
-					selectionColor={"black"}
-					activeUnderlineColor="transparent"
-				></TextInput>
+
 
 				<Image
 					source={require("../assets/rectangle.png")}
@@ -59,8 +63,8 @@ const LoginScreen = (props: LoginScreenProps) => {
 						height: 3,
 						borderRadius: 90,
 					}}
-				/>
-				<Text
+				/> */}
+				{/* <Text
 					style={[
 						applicationTheme.titleTextStyle,
 						{
@@ -85,38 +89,20 @@ const LoginScreen = (props: LoginScreenProps) => {
 						width: 350,
 						height: 3,
 						borderRadius: 90,
+						marginBottom: 56,
 					}}
-				/>
-				<Button
-					onPress={() => props.navigation.navigate("WelcomeScreen")}
-					mode="contained"
-					style={[
-						applicationTheme.buttonStyle,
-						{
-							marginTop: 56,
-						},
-					]}
-					contentStyle={{
-						flexDirection: "row-reverse",
-						marginEnd: 0,
-					}}
-				>
-					<Text
-						style={[
-							applicationTheme.buttonText,
-							{
-								fontFamily: "Rubik_700Bold",
-								fontSize: 20,
-							},
-						]}
-					>
-						Sign In
-					</Text>
-				</Button>
+				/> */}
+
+				{/* <TextFields /> */}
+
 				<Text
 					style={[
 						applicationTheme.welcomeTextStyle,
-						{fontFamily: "Inter_600SemiBold", fontSize: 14, paddingTop: 20},
+						{
+							fontFamily: "Inter_600SemiBold",
+							fontSize: 14,
+							paddingTop: 20,
+						},
 					]}
 				>
 					Forgot password?
@@ -127,7 +113,9 @@ const LoginScreen = (props: LoginScreenProps) => {
 							New User?{" "}
 						</Text>
 						<TouchableOpacity
-							onPress={() => props.navigation.navigate("RegisterScreen")}
+							onPress={() =>
+								props.navigation.navigate("SignUpScreen")
+							}
 						>
 							<Text style={applicationTheme.signInTextStyle}>
 								Sign Up

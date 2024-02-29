@@ -2,8 +2,16 @@ import React from "react";
 import {Image, StyleSheet, View, ImageBackground} from "react-native";
 import {Text, Button} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
+import CustomButton from "../Components/CustomButton";
 
 const WelcomeScreen = ({navigation}: {navigation: any}) => {
+	const handleSignInPress = () => {
+		navigation.navigate("SignInScreen");
+	};
+
+	const handleSignUpPress = () => {
+		navigation.navigate("SignUpScreen");
+	};
 	return (
 		<ImageBackground
 			source={require("../assets/dot_background.png")}
@@ -26,14 +34,18 @@ const WelcomeScreen = ({navigation}: {navigation: any}) => {
 				<Text
 					style={[
 						applicationTheme.welcomeTextStyle,
-						{fontFamily: "Rubik_700Bold", fontSize: 32, color: "#fff"},
+						{
+							fontFamily: "Rubik_700Bold",
+							fontSize: 32,
+							color: "#fff",
+						},
 					]}
 				>
 					MindScape
 				</Text>
 			</View>
 
-			{/* Sign Up and Sign In Buttons */}
+			{/* White Bottom Container */}
 			<View style={applicationTheme.bottomSpacing}>
 				<Text
 					style={[
@@ -63,48 +75,8 @@ const WelcomeScreen = ({navigation}: {navigation: any}) => {
 					Monitor and improve both your physical{"\n"}
 					and mental health with ease.
 				</Text>
-				<Button
-					onPress={() => navigation.navigate("RegisterScreen")}
-					mode="contained"
-					style={applicationTheme.buttonStyle}
-					contentStyle={{
-						flexDirection: "row-reverse",
-						marginEnd: 0,
-					}}
-				>
-					<Text
-						style={[
-							applicationTheme.buttonText,
-							{
-								fontFamily: "Rubik_700Bold",
-								fontSize: 20,
-							},
-						]}
-					>
-						Sign Up
-					</Text>
-				</Button>
-				<Button
-					onPress={() => navigation.navigate("LoginScreen")}
-					mode="contained"
-					style={applicationTheme.buttonStyle}
-					contentStyle={{
-						flexDirection: "row-reverse",
-						marginEnd: 0,
-					}}
-				>
-					<Text
-						style={[
-							applicationTheme.buttonText,
-							{
-								fontFamily: "Rubik_700Bold",
-								fontSize: 20,
-							},
-						]}
-					>
-						Sign In
-					</Text>
-				</Button>
+				<CustomButton onPress={handleSignInPress} text="Sign In" />
+				<CustomButton onPress={handleSignUpPress} text="Sign Up" />
 			</View>
 		</ImageBackground>
 	);

@@ -16,7 +16,7 @@ const PasswordChanged = ({navigation}: {navigation:any}) => {
             </View>
             <View style={applicationTheme.regContent}>
                 <Text style={applicationTheme.darkText}>Your password has been changed</Text>
-                <Button onPress={() => navigation.navigate('LoginScreen')} mode="contained" style={applicationTheme.buttonStyle}>Login</Button>
+                <Button onPress={() => navigation.navigate('SignInScreen')} mode="contained" style={applicationTheme.buttonStyle}>Login</Button>
             </View>
         </SafeAreaView>
     );
