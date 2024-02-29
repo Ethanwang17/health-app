@@ -12,7 +12,7 @@ const SignUpScreen = ({navigation}: {navigation: any}) => {
 
 	const handleSignUpPress = () => {
 		// Handle button press logic here
-		navigation.navigate("WelcomeScreen");
+		navigation.navigate("OnboardFirstScreen");
 	};
 	return (
 		<SafeAreaView style={applicationTheme.loginContent}>

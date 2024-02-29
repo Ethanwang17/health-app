@@ -13,6 +13,7 @@ import VerifyEmailScreen from "./Screens/VerifyEmailScreen";
 import PasswordChanged from "./Screens/PasswordChangedScreen";
 import NewPwScreen from "./Screens/NewPwScreen";
 import OnboardFirstScreen from "./Screens/OnboardFirstScreen";
+import OnboardSecondScreen from "./Screens/OnboardSecondScreen";
 
 import { useFonts, Inter_800ExtraBold, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
 import { Rubik_700Bold } from "@expo-google-fonts/rubik";
@@ -41,6 +42,7 @@ export default function App(){
           <Stack.Screen name="SignInScreen" component={SignInScreen} options={{headerShown: false }}></Stack.Screen>
           <Stack.Screen name='SignUpScreen' component={SignUpScreen} options={{headerShown: false}}></Stack.Screen>
           <Stack.Screen name='OnboardFirstScreen' component={OnboardFirstScreen} options={{headerShown: false}}></Stack.Screen>
+          <Stack.Screen name='OnboardSecondScreen' component={OnboardSecondScreen} options={{headerShown: false}}></Stack.Screen>
           <Stack.Screen name='PwResetScreen' component={PwResetScreen} options={{title: "Enter your e-mail"}}></Stack.Screen>
           <Stack.Screen name='NewPwScreen' component={NewPwScreen} options={{title: "Enter a new password"}}></Stack.Screen>
           <Stack.Screen name='HomeScreen' component={HomeScreen} options={{title: "Home"}}></Stack.Screen>

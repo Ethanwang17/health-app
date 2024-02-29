@@ -146,5 +146,9 @@ export const applicationTheme = StyleSheet.create({
 		fontFamily: "Inter_600SemiBold",
 		fontSize: 15,
 	},
-
+	onboardHeader:{
+		justifyContent: "center",
+		alignItems: "center",
+		paddingTop: 40,
+	},
 });

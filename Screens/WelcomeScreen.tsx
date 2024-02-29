@@ -22,7 +22,7 @@ const WelcomeScreen = ({navigation}: {navigation: any}) => {
 			<View style={applicationTheme.welcomeLogo}>
 				<View style={applicationTheme.imagePosition}>
 					<Image
-						source={require("../assets/logo.png")}
+						source={require("../assets/light_green_logo.png")}
 						style={{
 							width: 140,
 							height: 116.82,

@@ -1,44 +1,51 @@
 import React from "react";
 import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
-import {Button, TextInput, Text} from "react-native-paper";
+import {Button, Card, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
+import {useTogglePasswordVisibility} from "./pwVisibility";
+import {transparent} from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 import CustomButton from "../Components/CustomButton";
 
-const OnboardFirstScreen = ({navigation}: {navigation: any}) => {
+const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 	const NextScreen = () => {
 		// Handle button press logic here
-		navigation.navigate("OnboardSecondScreen");
+		navigation.navigate("WelcomeScreen");
 	};
 
 	return (
 		<SafeAreaView style={[applicationTheme.loginContent, {flex: 1}]}>
 			<View style={{flex: 1}}>
-				<View style={applicationTheme.welcomeLogo}>
-					<View style={applicationTheme.imagePosition}>
-						<Text
-							style={[
-								applicationTheme.welcomeTextStyle,
-								{
-									fontFamily: "Rubik_700Bold",
-									fontSize: 32,
-									color: "#153D45",
-									paddingBottom: 84,
-								},
-							]}
-						>
-							Welcome to {"\n"}
-							MindScape
-						</Text>
-						<Image
-							source={require("../assets/dark_green_logo.png")}
-							style={{
-								width: 209,
-								height: 116.82,
-								resizeMode: "contain",
-							}}
-						/>
-					</View>
+				<View style={applicationTheme.onboardHeader}>
+					<Text
+						style={[
+							applicationTheme.welcomeTextStyle,
+							{
+								fontFamily: "Rubik_700Bold",
+								fontSize: 32,
+								color: "#153D45",
+								paddingBottom: 84,
+							},
+						]}
+					>
+						Upload a{"\n"}
+						profile picture.
+					</Text>
 				</View>
+
+				<View
+					style={{
+						flex: 1,
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Image
+						source={require("../assets/circle_rings.png")}
+						style={{width: 260, height: 260}}
+						resizeMode="contain"
+					/>
+				</View>
+
 				<View
 					style={{
 						flex: 1,
@@ -55,19 +62,19 @@ const OnboardFirstScreen = ({navigation}: {navigation: any}) => {
 					>
 						<View
 							style={{
-								width: 26,
+								width: 10,
 								height: 8,
 								borderRadius: 5,
-								backgroundColor: "#153D45",
+								backgroundColor: "#BFDDE2",
 								marginHorizontal: 2,
 							}}
 						/>
 						<View
 							style={{
-								width: 10,
+								width: 26,
 								height: 8,
 								borderRadius: 5,
-								backgroundColor: "#BFDDE2",
+								backgroundColor: "#153D45",
 								marginHorizontal: 2,
 							}}
 						/>
@@ -98,4 +105,4 @@ const OnboardFirstScreen = ({navigation}: {navigation: any}) => {
 	);
 };
 
-export default OnboardFirstScreen;
+export default OnboardSecondScreen;
