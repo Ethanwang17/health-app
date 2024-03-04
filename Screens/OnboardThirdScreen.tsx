@@ -6,10 +6,10 @@ import {useTogglePasswordVisibility} from "./pwVisibility";
 import {transparent} from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 import CustomButton from "../Components/CustomButton";
 
-const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
+const OnboardThirdScreen = ({navigation}: {navigation: any}) => {
 	const NextScreen = () => {
 		// Handle button press logic here
-		navigation.navigate("OnboardThirdScreen");
+		navigation.navigate("OnboardFourthScreen");
 	};
 
 	return (
@@ -27,8 +27,8 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 							},
 						]}
 					>
-						Upload a{"\n"}
-						profile picture.
+						Sync health data{"\n"}
+						to MindScape.
 					</Text>
 				</View>
 
@@ -40,15 +40,27 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 					}}
 				>
 					<Image
-						source={require("../assets/circle_rings.png")}
-						style={{width: 260, height: 260}}
-						resizeMode="contain"
+						style={applicationTheme.Group56282}
+						source={require("../assets/health_connect.png")}
 					/>
-					<View style={applicationTheme.profileCircle} />
-					<View style={applicationTheme.verticalPlusCircle} />
-					<View style={applicationTheme.horizontalPlusCircle} />
-
-
+					<Text
+						style={[
+							applicationTheme.welcomeTextStyle,
+							{
+								paddingTop: 69,
+								width: "80%",
+								fontFamily: "Inter_600SemiBold",
+								fontSize: 15,
+							},
+						]}
+					>
+						To provide you with a comprehensive health monitoring
+						experience, MindScape requests access to your Apple
+						Health data. This allows us to gather vital information
+						like your daily steps, heart rate, sleep analysis, and
+						more, ensuring personalized insights and recommendations
+						for your well-being.{" "}
+					</Text>
 				</View>
 
 				<View
@@ -76,6 +88,15 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 						/>
 						<View
 							style={{
+								width: 10,
+								height: 8,
+								borderRadius: 5,
+								backgroundColor: "#BFDDE2",
+								marginHorizontal: 2,
+							}}
+						/>
+						<View
+							style={{
 								width: 26,
 								height: 8,
 								borderRadius: 5,
@@ -92,22 +113,13 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 								marginHorizontal: 2,
 							}}
 						/>
-						<View
-							style={{
-								width: 10,
-								height: 8,
-								borderRadius: 5,
-								backgroundColor: "#BFDDE2",
-								marginHorizontal: 2,
-							}}
-						/>
 					</View>
 
-					<CustomButton onPress={NextScreen} text="Continue" />
+					<CustomButton onPress={NextScreen} text="Connect to Health" />
 				</View>
 			</View>
 		</SafeAreaView>
 	);
 };
 
-export default OnboardSecondScreen;
+export default OnboardThirdScreen;

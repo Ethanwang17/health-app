@@ -6,10 +6,10 @@ import {useTogglePasswordVisibility} from "./pwVisibility";
 import {transparent} from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 import CustomButton from "../Components/CustomButton";
 
-const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
+const OnboardFourthScreen = ({navigation}: {navigation: any}) => {
 	const NextScreen = () => {
 		// Handle button press logic here
-		navigation.navigate("OnboardThirdScreen");
+		navigation.navigate("WelcomeScreen");
 	};
 
 	return (
@@ -27,8 +27,8 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 							},
 						]}
 					>
-						Upload a{"\n"}
-						profile picture.
+						Your personal data{"\n"}
+						is secure!
 					</Text>
 				</View>
 
@@ -40,15 +40,24 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 					}}
 				>
 					<Image
-						source={require("../assets/circle_rings.png")}
-						style={{width: 260, height: 260}}
-						resizeMode="contain"
+						style={applicationTheme.lockImage}
+						source={require("../assets/lock.png")}
 					/>
-					<View style={applicationTheme.profileCircle} />
-					<View style={applicationTheme.verticalPlusCircle} />
-					<View style={applicationTheme.horizontalPlusCircle} />
-
-
+					<Text
+						style={[
+							applicationTheme.welcomeTextStyle,
+							{
+								paddingTop: 69,
+								width: "80%",
+								fontFamily: "Inter_600SemiBold",
+								fontSize: 15,
+							},
+						]}
+					>
+						At Mindscape, we understand the value of privacy. We are
+						committed to securing your health and screen time data
+						to ensure your peace of mind.
+					</Text>
 				</View>
 
 				<View
@@ -76,6 +85,15 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 						/>
 						<View
 							style={{
+								width: 10,
+								height: 8,
+								borderRadius: 5,
+								backgroundColor: "#BFDDE2",
+								marginHorizontal: 2,
+							}}
+						/>
+						<View
+							style={{
 								width: 26,
 								height: 8,
 								borderRadius: 5,
@@ -92,22 +110,16 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 								marginHorizontal: 2,
 							}}
 						/>
-						<View
-							style={{
-								width: 10,
-								height: 8,
-								borderRadius: 5,
-								backgroundColor: "#BFDDE2",
-								marginHorizontal: 2,
-							}}
-						/>
 					</View>
 
-					<CustomButton onPress={NextScreen} text="Continue" />
+					<CustomButton
+						onPress={NextScreen}
+						text="Finish"
+					/>
 				</View>
 			</View>
 		</SafeAreaView>
 	);
 };
 
-export default OnboardSecondScreen;
+export default OnboardFourthScreen;
