@@ -1,5 +1,11 @@
 import React from "react";
-import {Image, StyleSheet, View, ImageBackground} from "react-native";
+import {
+	Image,
+	StyleSheet,
+	View,
+	ImageBackground,
+	StatusBar,
+} from "react-native";
 import {Text, Button} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import CustomButton from "../Components/CustomButton";
@@ -18,6 +24,8 @@ const WelcomeScreen = ({navigation}: {navigation: any}) => {
 			resizeMode="cover"
 			style={applicationTheme.image}
 		>
+			<StatusBar barStyle="light-content" />
+
 			{/* Welcome LOGO and Title */}
 			<View style={applicationTheme.welcomeLogo}>
 				<View style={applicationTheme.imagePosition}>
@@ -81,14 +89,5 @@ const WelcomeScreen = ({navigation}: {navigation: any}) => {
 		</ImageBackground>
 	);
 };
-
-const styles = StyleSheet.create({
-	mainView: {
-		flex: 1,
-		flexDirection: "column",
-		justifyContent: "center",
-		alignItems: "center",
-	},
-});
 
 export default WelcomeScreen;

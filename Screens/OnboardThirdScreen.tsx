@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
+import {View, Image, SafeAreaView, StatusBar} from "react-native";
 import {Button, Card, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
@@ -14,6 +14,8 @@ const OnboardThirdScreen = ({navigation}: {navigation: any}) => {
 
 	return (
 		<SafeAreaView style={[applicationTheme.loginContent, {flex: 1}]}>
+			<StatusBar barStyle="dark-content" />
+
 			<View style={{flex: 1}}>
 				<View style={applicationTheme.onboardHeader}>
 					<Text
@@ -40,7 +42,7 @@ const OnboardThirdScreen = ({navigation}: {navigation: any}) => {
 					}}
 				>
 					<Image
-						style={applicationTheme.Group56282}
+						style={applicationTheme.healthConnectImage}
 						source={require("../assets/health_connect.png")}
 					/>
 					<Text
@@ -115,7 +117,10 @@ const OnboardThirdScreen = ({navigation}: {navigation: any}) => {
 						/>
 					</View>
 
-					<CustomButton onPress={NextScreen} text="Connect to Health" />
+					<CustomButton
+						onPress={NextScreen}
+						text="Connect to Health"
+					/>
 				</View>
 			</View>
 		</SafeAreaView>

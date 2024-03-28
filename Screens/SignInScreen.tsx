@@ -1,5 +1,11 @@
 import React from "react";
-import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
+import {
+	View,
+	Image,
+	SafeAreaView,
+	TouchableOpacity,
+	StatusBar,
+} from "react-native";
 import {Button, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
@@ -25,6 +31,8 @@ const LoginScreen = (props: LoginScreenProps) => {
 
 	return (
 		<SafeAreaView style={applicationTheme.loginContent}>
+			<StatusBar barStyle="dark-content" />
+
 			<View style={applicationTheme.view}>
 				<Text
 					style={[

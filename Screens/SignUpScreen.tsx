@@ -1,5 +1,10 @@
 import React from "react";
-import {Image, SafeAreaView, View, TouchableOpacity} from "react-native";
+import {
+	SafeAreaView,
+	View,
+	TouchableOpacity,
+	StatusBar,
+} from "react-native";
 import {Text, Button, TextInput} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
@@ -16,6 +21,8 @@ const SignUpScreen = ({navigation}: {navigation: any}) => {
 	};
 	return (
 		<SafeAreaView style={applicationTheme.loginContent}>
+			<StatusBar barStyle="dark-content" />
+
 			<View style={applicationTheme.view}>
 				<Text
 					style={[

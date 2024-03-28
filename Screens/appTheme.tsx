@@ -146,7 +146,7 @@ export const applicationTheme = StyleSheet.create({
 		fontFamily: "Inter_600SemiBold",
 		fontSize: 15,
 	},
-	onboardHeader:{
+	onboardHeader: {
 		justifyContent: "center",
 		alignItems: "center",
 		paddingTop: 40,
@@ -159,9 +159,9 @@ export const applicationTheme = StyleSheet.create({
 		position: "absolute",
 		top: "50%",
 		left: "50%",
-		transform: [{ translateX: -100 }, { translateY: -100 }],
-	  },
-	  verticalPlusCircle: {
+		transform: [{translateX: -100}, {translateY: -100}],
+	},
+	verticalPlusCircle: {
 		width: 8,
 		height: 66,
 		borderRadius: 50,
@@ -169,9 +169,9 @@ export const applicationTheme = StyleSheet.create({
 		position: "absolute",
 		top: "50%",
 		left: "50%",
-		transform: [{ translateX: -4 }, { translateY: -33 }],
-	  },
-	  horizontalPlusCircle: {
+		transform: [{translateX: -4}, {translateY: -33}],
+	},
+	horizontalPlusCircle: {
 		width: 66,
 		height: 8,
 		borderRadius: 50,
@@ -179,14 +179,45 @@ export const applicationTheme = StyleSheet.create({
 		position: "absolute",
 		top: "50%",
 		left: "50%",
-		transform: [{ translateX: -33 }, { translateY: -4 }],
-	  },
-	  Group56282: {
+		transform: [{translateX: -33}, {translateY: -4}],
+	},
+	healthConnectImage: {
 		width: 319,
 		height: 93,
-	  },
-	  lockImage: {
+	},
+	lockImage: {
 		width: 208,
 		height: 208,
-	  },
+	},
+	HomepageHeader: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center", 
+		paddingHorizontal: 30,
+		marginTop: 80,
+		paddingBottom: -200,
+	},
+	circle: {
+        width: 189,
+        height: 189,
+        borderRadius: 95,
+        backgroundColor: "#F2F8F6",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+	ProfileHeader: {
+		
+		justifyContent: "space-between",
+		alignItems: "center", 
+		paddingHorizontal: 30,
+		marginTop: 70,
+		paddingBottom: -200,
+	},
+	NavigationHeader: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center", 
+		paddingHorizontal: 30,
+
+	},
 });

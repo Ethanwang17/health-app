@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
+import {View, Image, SafeAreaView, StatusBar} from "react-native";
 import {Button, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import CustomButton from "../Components/CustomButton";
@@ -11,7 +11,8 @@ const OnboardFirstScreen = ({navigation}: {navigation: any}) => {
 	};
 
 	return (
-		<SafeAreaView style={[applicationTheme.loginContent, {flex: 1}]}>
+		<SafeAreaView style={applicationTheme.loginContent}>
+			<StatusBar barStyle="dark-content" />
 			<View style={{flex: 1}}>
 				<View style={applicationTheme.welcomeLogo}>
 					<View style={applicationTheme.imagePosition}>

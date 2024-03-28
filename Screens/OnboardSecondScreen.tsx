@@ -1,5 +1,11 @@
 import React from "react";
-import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
+import {
+	View,
+	Image,
+	SafeAreaView,
+	TouchableOpacity,
+	StatusBar,
+} from "react-native";
 import {Button, Card, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
@@ -14,6 +20,7 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 
 	return (
 		<SafeAreaView style={[applicationTheme.loginContent, {flex: 1}]}>
+			<StatusBar barStyle="dark-content" />
 			<View style={{flex: 1}}>
 				<View style={applicationTheme.onboardHeader}>
 					<Text
@@ -47,8 +54,6 @@ const OnboardSecondScreen = ({navigation}: {navigation: any}) => {
 					<View style={applicationTheme.profileCircle} />
 					<View style={applicationTheme.verticalPlusCircle} />
 					<View style={applicationTheme.horizontalPlusCircle} />
-
-
 				</View>
 
 				<View

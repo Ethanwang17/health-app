@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Image, SafeAreaView, TouchableOpacity} from "react-native";
+import {View, Image, SafeAreaView, StatusBar} from "react-native";
 import {Button, Card, TextInput, Text} from "react-native-paper";
 import {applicationTheme} from "./appTheme";
 import {useTogglePasswordVisibility} from "./pwVisibility";
@@ -9,11 +9,13 @@ import CustomButton from "../Components/CustomButton";
 const OnboardFourthScreen = ({navigation}: {navigation: any}) => {
 	const NextScreen = () => {
 		// Handle button press logic here
-		navigation.navigate("WelcomeScreen");
+		navigation.navigate("HomepageScreen");
 	};
 
 	return (
 		<SafeAreaView style={[applicationTheme.loginContent, {flex: 1}]}>
+			<StatusBar barStyle="dark-content" />
+
 			<View style={{flex: 1}}>
 				<View style={applicationTheme.onboardHeader}>
 					<Text
@@ -112,10 +114,7 @@ const OnboardFourthScreen = ({navigation}: {navigation: any}) => {
 						/>
 					</View>
 
-					<CustomButton
-						onPress={NextScreen}
-						text="Finish"
-					/>
+					<CustomButton onPress={NextScreen} text="Finish" />
 				</View>
 			</View>
 		</SafeAreaView>
